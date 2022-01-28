@@ -40,7 +40,7 @@ const isURLValid = (s) => {
 //This method is designed to provide a response for a short url
 app.post('/api/shorturl', (req, res) => {
     if(!isURLValid(req.original_url)) { res.json({"error": "invalid url"})};
-    const oldURL = new URL({ originalUrl: req.original_url, shortUrl: Math.floor(Math.random() * max) });
+    const oldURL = new URL({ originalUrl: req.original_url, shortUrl: Math.floor(Math.random() * 100) });
     oldURL.save((err, date) => {
         if(err) return console.err();
         done(null, data);
