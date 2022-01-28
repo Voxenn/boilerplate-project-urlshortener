@@ -45,10 +45,10 @@ app.post('/api/shorturl', (req, res, next) => {
         if(err) return console.err();
         done(null, data);
     });
-    next();
-}, (req, res) => {
+
     res.json({
-        "test": "test"
+        "original_url": oldURL.originalUrl,
+        "short_url": oldURL.shortUrl
     });
 });
 app.listen(port, function() {
