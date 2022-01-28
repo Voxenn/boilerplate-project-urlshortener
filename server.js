@@ -48,7 +48,7 @@ app.post('/api/shorturl', (req, res) => {
     next();
 }, (req, res) => {
     res.json({
-        console.log('test');
+        "test": "test"
     });
 });
 app.listen(port, function() {
